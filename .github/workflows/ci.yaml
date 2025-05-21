@@ -5,28 +5,28 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # ✅ Corrected spelling
+    runs-on: ubuntu-latest
 
     steps:
       - uses: actions/checkout@v3
 
       - uses: actions/setup-python@v4
         with:
-          python-version: 3.11  # ✅ Added space after colon
+          python-version: 3.11
 
       - uses: iterative/setup-cml@v2
 
-      - name: Install Dependencies  # ✅ Fixed typo "Inatall"
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run Main file
-        run: python main.py  # ✅ Fixed incorrect indentation
+        run: python main.py
 
       - name: Run TEST
         run: |
-          python -m unittest discover  # ✅ Fixed indentation
+          python -m unittest discover
 
       - name: Create CML REPORT
         env:

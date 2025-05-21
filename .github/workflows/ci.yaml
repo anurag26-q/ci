@@ -39,6 +39,7 @@ jobs:
       - name: Create CML REPORT
         env:
           REPO_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           echo "# First Line of our report" > report.md
           echo "## Bar Plots" >> report.md
@@ -47,3 +48,4 @@ jobs:
           echo '![](./lines.png "Line plot")' >> report.md
 
           cml --debug comment create report.md
+
